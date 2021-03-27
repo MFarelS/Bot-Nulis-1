@@ -35,7 +35,7 @@
                             function buat() {
                                 var xhr = new XMLHttpRequest();
                                 var isi = encodeURIComponent(document.getElementById("teks").value);
-                                var url = "http://jamet1337.ml/api/nulis.php?tulis="+isi;
+                                var url = "https://api.xteam.xyz/magernulis2?text="+isi"&APIKEY=NezukoTachibana";
                     
                                 xhr.onloadstart = function () {
                                     document.getElementById("button").innerHTML = "Loading...";
@@ -58,7 +58,7 @@
                                          alert('Error');
                                          alert('Harap masukan input dengan benar!');
                                       }else{
-                                        document.getElementById("hasil").append(img);
+                                        document.getElementById(url).append(img);
                     
                                         setTimeout(function () {
                                             document.getElementById("button").innerHTML = "Buat Lagi";
