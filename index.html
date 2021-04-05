@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	 <center>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MFarelSZ Website | By MFarelS">
+  <meta name="author" content="MFarelS">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;display=swap"
+    rel="stylesheet">
+
+  <title>MFarelSZ Website | Rajin Nulis v3</title>
+
+<div class="tile">
+  <!-- Hasil Gambar Akan Muncul Di Sini -->
+                    <div class="tile-body" id="result">
+                    </div>
+                    </div>
+                    <div class="tile">
+                    <div class="tile-body">
+                    <br>
+                    <textarea id='teks' class="form-control" placeholder="Masukan Text Yang Ingin Di Tulis !" rows="5"></textarea>
+                    </div>
+                    </div>		
+                    <div class="tile">
+                    <div class="row">
+                    </div>
+                    <div class="col">
+                    <input type='button' onclick="buat()"  value="TULIS" id='button' class="btn btn-danger btn-block">
+                    </div>
+                    </div>
+                    </div>
+                    
+                    <script>
+                            function buat() {
+                                var xhr = new XMLHttpRequest();
+                                var isi = encodeURIComponent(document.getElementById("teks").value);
+                                var url = "https://mfarelsz.xyz/api/magernulis1?text="+isi;
+                    
+                                xhr.onloadstart = function () {
+                                    document.getElementById("button").innerHTML = "Loading...";
+                                }
+                    
+                                xhr.onerror = function () {
+                                    alert("Gagal mengambil data");
+                                };
+                    
+                                xhr.onloadend = function () {
+                                    if (this.responseText !== "") {
+                                        //alert(encodeURIComponent(gans));
+                                        var data = JSON.parse(this.responseText);
+                                        var img = document.createElement("img");
+                                  img.setAttribute("width", "304");
+                                        img.src = data.image;
+                                        var name = document.createElement("h3");
+                                        name.innerHTML = data.status;
+                                      if (data.status == 'Error'){
+                                         alert('Error');
+                                         alert('Harap masukan input dengan benar!');
+                                      }else{
+                                        document.getElementById("result").append(img);
+                    
+                                        setTimeout(function () {
+                                            document.getElementById("button").innerHTML = "Buat Lagi";
+                                        }, 3000);
+                                      }
+                                    }
+                                };
+                                xhr.open("GET", url, true);
+                                xhr.send();
+                            }
+                    
+                            function clearResult() {
+                                document.getElementById("result").innerHTML = "";
+                            }
+                    </script>
+               </div>
+          </div>
+          </body>
+          </html>
