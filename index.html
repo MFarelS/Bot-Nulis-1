@@ -2,18 +2,18 @@
 <html>
   <head>
 	 <center>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="MFarelSZ Website | By MFarelS">
-  <meta name="author" content="MFarelS">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;display=swap"
-    rel="stylesheet">
-
-  <title>MFarelSZ Website | Rajin Nulis v3</title>
+	   <!-- Di Buat Oleh Ahmat Badali -->
+	 	<title>Bot Nulis - Jamet1337</title>	
+			  	 <link type="image/png" href="https://b.top4top.io/p_1833lzkex0.png" rel="icon">
+				 <meta property="og:image" content="https://b.top4top.io/p_1833lzkex0.png">
+				 <meta content="Bot Untuk Menulis Otomatis." name="description">
+				 <meta content="Bot Nulis" name="keywords">
+				 <meta name="theme-color" content="black">
+				 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <div class="tile">
   <!-- Hasil Gambar Akan Muncul Di Sini -->
-                    <div class="tile-body" id="result">
+                    <div class="tile-body" id="hasil">
                     </div>
                     </div>
                     <div class="tile">
@@ -30,21 +30,21 @@
                     </div>
                     </div>
                     </div>
-                    
+
                     <script>
                             function buat() {
                                 var xhr = new XMLHttpRequest();
                                 var isi = encodeURIComponent(document.getElementById("teks").value);
-                                var url = "https://mfarelsz.xyz/api/magernulis1?text="+isi;
-                    
+                                var url = "https://tools.zone-xsec.com/api/nulis.php?q="+isi;
+
                                 xhr.onloadstart = function () {
                                     document.getElementById("button").innerHTML = "Loading...";
                                 }
-                    
+
                                 xhr.onerror = function () {
                                     alert("Gagal mengambil data");
                                 };
-                    
+
                                 xhr.onloadend = function () {
                                     if (this.responseText !== "") {
                                         //alert(encodeURIComponent(gans));
@@ -58,8 +58,8 @@
                                          alert('Error');
                                          alert('Harap masukan input dengan benar!');
                                       }else{
-                                        document.getElementById("result").append(img);
-                    
+                                        document.getElementById("hasil").append(img);
+
                                         setTimeout(function () {
                                             document.getElementById("button").innerHTML = "Buat Lagi";
                                         }, 3000);
@@ -69,9 +69,9 @@
                                 xhr.open("GET", url, true);
                                 xhr.send();
                             }
-                    
+
                             function clearResult() {
-                                document.getElementById("result").innerHTML = "";
+                                document.getElementById("hasil").innerHTML = "";
                             }
                     </script>
                </div>
